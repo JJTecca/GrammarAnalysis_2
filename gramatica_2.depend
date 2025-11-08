@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1762608820 source:c:\users\cristi\desktop\gramatica_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<uchar.h>
+	"gramatica_defines.h"
+
+1762596534 c:\users\cristi\desktop\gramatica_2\gramatica_defines.h
+

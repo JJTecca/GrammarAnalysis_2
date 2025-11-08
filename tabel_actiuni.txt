@@ -1,0 +1,12 @@
+id + * ( ) $ E T F
+d5 x x d4 x x 1 2 3
+x d6 x x x acc x x x
+x r2 d7 x r2 r2 x x x
+x r4 r4 x r4 r4 x x x
+d5 x x d4 x x 8 2 3
+x r6 r6 x r6 r6 x x x
+d5 x x d4 x x x x 10
+x d6 x x d11 x x x x
+x r1 d7 x r1 r1 x x x
+x r3 r3 x r3 r3 x x x
+x r5 r5 x r5 r5 x x x

@@ -1,0 +1,6 @@
+#ifndef GRAMATICA_DEFINES_H
+#define GRAMATICA_DEFINES_H
+
+
+
+#endif // GRAMATICA_DEFINES_H
