@@ -50,6 +50,9 @@ typedef struct{
 }elemente_gramatica;
 
 elemente_gramatica *gramatica = NULL;
+/**********************************************************
+    This can be left as NULL and in main read from keyboard
+**********************************************************/
 char entry_message[50] = "id+id+id+id+id*id $";
 
 /***********************************
@@ -173,7 +176,6 @@ handleError_t read_production(elemente_gramatica *param_gramatica) {
     char ch = fgetc(gramatica_productie), temp_buffer[MAX_SYMBOL_LENGTH];
     unsigned length_right,length_left,idx,row;
     length_left = length_right = idx = row = 0;
-    /*TODO : Put them into array productie_verif_chars */
     while (ch != 0x0A && ch != EOF){
         ch = fgetc(gramatica_productie);
     }
@@ -187,7 +189,6 @@ handleError_t read_production(elemente_gramatica *param_gramatica) {
         idx = 0;
         while(ch != 0x0A && ch != EOF) {
             temp_buffer[idx++] = ch;
-            //*(param_gramatica->right+(length_right++)) = ch;
             ch = fgetc(gramatica_productie);
         }
         //Copy from buffer to right storages
@@ -243,11 +244,9 @@ handleError_t special_case(elemente_gramatica *param_gramatica)
     concat_digits[last_char] = '\0';
 
     digits = atoi(concat_digits);
-    //printf("\nThe row : %d", digits);
 
     // Find column with "$"
     for(column = 0; strcmp(param_gramatica->symbols[0][column], "$") != 0; column++);
-    //printf("\nThe column : %d", column);
 
     // Get intersection
     char intersection[MAX_SYMBOL_LENGTH];
@@ -353,7 +352,6 @@ handleError_t automat_evo(elemente_gramatica *param_gramatica) {
         //At least last 2 chars are digits
         if(isdigit(param_gramatica->stack[stack_length-1]) && isdigit(param_gramatica->stack[stack_length-2])){
            special_case(param_gramatica);
-           //stack_top = param_gramatica->stack[strlen(param_gramatica->stack)-1]-'0';
            goto clear;
         }
         if(intersection[0]=='d'){
