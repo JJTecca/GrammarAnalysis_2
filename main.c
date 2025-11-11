@@ -2,7 +2,16 @@
 #include <stdlib.h>
 #include <uchar.h>
 #include "gramatica_defines.h"
-
+/************************************
+    PARSER IMPLEMENTATION
+    Description: This program implements a shift-reduce parser
+    for arithmetic expressions using grammar tables
+    Files needed:
+    - gramatica_productie.txt (grammar productions)
+    - tabel_actiuni.txt (action table)
+    Input: Arithmetic expressions like "id+id*id $"
+    Output: Parsing steps and acceptance/rejection
+*************************************/
 /************************************
         Define Macros
 *************************************/
@@ -394,6 +403,15 @@ handleError_t automat_evo(elemente_gramatica *param_gramatica) {
     //printf("%s",param_gramatica->symbols[stack_top+1][0]);
     return HANDLE_SUCCES;
 }
+/************************************
+    MAIN EXECUTION FLOW:
+    1. Initialize grammar structure
+    2. Allocate memory for symbols table
+    3. Read action table from file
+    4. Read grammar productions  
+    5. Execute parser algorithm
+    6. Cleanup and return status
+*************************************/
 int main()
 {
     gramatica = malloc(sizeof(elemente_gramatica));
