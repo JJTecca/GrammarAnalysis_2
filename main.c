@@ -136,10 +136,7 @@ handleError_t read_table(elemente_gramatica *param_gramatica){
     if(!param_gramatica || !param_gramatica->symbols) {
         return HANDLE_GENERAL_ERROR;
     }
-
-    /*************************************
-        Init startings 1 byte vars
-    ***************************************/
+    
     param_gramatica->init_symbol = fgetc(gramatica_productie); fgetc(gramatica_productie); //SKIP SPACE
     param_gramatica->termen = fgetc(gramatica_productie); fgetc(gramatica_productie); //SKIP SPACE
     param_gramatica->factor = fgetc(gramatica_productie);
