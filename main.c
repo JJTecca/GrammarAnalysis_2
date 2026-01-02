@@ -136,7 +136,7 @@ handleError_t read_table(elemente_gramatica *param_gramatica){
     if(!param_gramatica || !param_gramatica->symbols) {
         return HANDLE_GENERAL_ERROR;
     }
-    
+
     param_gramatica->init_symbol = fgetc(gramatica_productie); fgetc(gramatica_productie); //SKIP SPACE
     param_gramatica->termen = fgetc(gramatica_productie); fgetc(gramatica_productie); //SKIP SPACE
     param_gramatica->factor = fgetc(gramatica_productie);
@@ -405,7 +405,7 @@ handleError_t automat_evo(elemente_gramatica *param_gramatica) {
     1. Initialize grammar structure
     2. Allocate memory for symbols table
     3. Read action table from file
-    4. Read grammar productions  
+    4. Read grammar productions
     5. Execute parser algorithm
     6. Cleanup and return status
 *************************************/
